@@ -20,12 +20,12 @@ export class UniqueConstraint implements ValidatorConstraintInterface {
     }
 }
 
-export function Unique(entity?: any, value?: string, validationOptions?: ValidationOptions) {
+export function Unique(entity?: any, validationOptions?: ValidationOptions) {
     return function (object: Object, propertyName: string) {
         registerDecorator({
             target: object.constructor,
             propertyName: propertyName,
-            options: { message: `The ${propertyName} is already exists.` },
+            options: validationOptions ?? { message: `The ${propertyName} is already exists.` },
             constraints: [entity],
             validator: UniqueConstraint
         });
