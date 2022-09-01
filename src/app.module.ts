@@ -20,7 +20,8 @@ import { DataSource } from 'typeorm';
   ],
 })
 export class AppModule {
+  static dataSource: DataSource;
   constructor(private dataSource: DataSource) {
-    console.log(this.dataSource.options);
+    AppModule.dataSource = dataSource;
   }
 }
