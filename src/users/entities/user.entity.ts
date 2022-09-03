@@ -7,6 +7,9 @@ export class User {
     @PrimaryGeneratedColumn("uuid")
     id: string
 
+    @OneToMany(() => Post, post => post.user)
+    posts: Post[]
+
     @Column({ name: "first_name", type: "varchar", length: 255, nullable: true })
     firstName: string
 
