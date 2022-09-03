@@ -16,6 +16,10 @@ export class UniqueConstraint implements ValidatorConstraintInterface {
         const [property] = args.property.split('.');
         const repository = new Repository<typeof entity>(entity, new EntityManager(AppModule.dataSource));
         const count = (await repository.findBy({ [property]: value })).length;
+
+        if (args.targetName.includes('Update')) {
+            return count === 1;
+        }
         return count === 0;
     }
 }
