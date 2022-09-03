@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Post } from "src/posts/entities/post.entity";
+import * as bcrypt from 'bcrypt';
+import { AfterLoad, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('users')
 export class User {
@@ -25,4 +27,30 @@ export class User {
 
     @CreateDateColumn({ name: 'last_login', nullable: true })
     lastLogin: Date
+
+    @CreateDateColumn()
+    createdAt: Date;
+
+    @UpdateDateColumn()
+    updatedAt: Date;
+
+    @DeleteDateColumn()
+    deletedAt: Date;
+
+    private tempPassword: string
+    @AfterLoad()
+    private loadTempPassword(): void {
+        this.tempPassword = this.password;
+    }
+
+    @BeforeInsert()
+    @BeforeUpdate()
+    async hashPassword() {
+        const isMatch = await bcrypt.compare(this.password, this.tempPassword);
+        if (isMatch) {
+            this.password = this.tempPassword;
+        } else {
+            this.password = await bcrypt.hash(this.password, 10);
+        }
+    }
 }
