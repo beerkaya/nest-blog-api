@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import { UsersHttpModule } from './users/users-http.module';
 import { PostCommentsModule } from './post_comments/post_comments.module';
 import { PostMetasModule } from './post_metas/post_metas.module';
-import { TagsModule } from './tags/tags.module';
+import { TagsHttpModule } from './tags/tags-http.module';
 import { CategoriesModule } from './categories/categories.module';
 import { AuthModule } from './auth/auth.module';
 import { PostsHttpModule } from './posts/posts-http.module';
@@ -18,7 +18,7 @@ import { PostsHttpModule } from './posts/posts-http.module';
     PostsHttpModule,
     PostCommentsModule,
     PostMetasModule,
-    TagsModule,
+    TagsHttpModule,
     CategoriesModule,
     AuthModule
   ],

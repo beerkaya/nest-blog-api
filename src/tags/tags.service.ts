@@ -11,31 +11,35 @@ export class TagsService {
     @InjectRepository(Tag)
     private tagsRepository: Repository<Tag>
   ) {}
-  create(createTagDto: CreateTagDto) {
+
+  async create(createTagDto: CreateTagDto): Promise<Tag> {
     const tag = new Tag();
     tag.title = createTagDto.title;
     tag.content = createTagDto.content;
 
-    return this.tagsRepository.save(tag);
+    return await this.tagsRepository.save(tag);
   }
 
-  findAll(): Promise<Tag[]> {
-    return this.tagsRepository.find();
+  async findAll(): Promise<Tag[]> {
+    return await this.tagsRepository.find();
   }
 
-  findOne(id: string) {
-    return this.tagsRepository.findOneBy({ id });
+  async findOne(id: string): Promise<Tag> {
+    return await this.tagsRepository.findOne({
+      where: { id: id },
+    });
   }
 
-  async update(id: string, updateTagDto: UpdateTagDto) {
-    const tag = await this.tagsRepository.findOneBy({ id });
+  async update(id: string, updateTagDto: UpdateTagDto): Promise<Tag> {
+    const tag = await this.tagsRepository.findOneByOrFail({ id });
     tag.title = updateTagDto.title;
     tag.content = updateTagDto.content;
 
-    return this.tagsRepository.save(tag);
+    return await this.tagsRepository.save(tag);
   }
 
   async remove(id: string): Promise<void> {
+    let entity = await this.tagsRepository.findOneByOrFail({ id });
     await this.tagsRepository.delete(id);
   }
 }
