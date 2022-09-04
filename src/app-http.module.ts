@@ -6,7 +6,7 @@ import { UsersHttpModule } from './users/users-http.module';
 import { PostCommentsModule } from './post_comments/post_comments.module';
 import { PostMetasModule } from './post_metas/post_metas.module';
 import { TagsHttpModule } from './tags/tags-http.module';
-import { CategoriesModule } from './categories/categories.module';
+import { CategoriesHttpModule } from './categories/categories-http.module';
 import { AuthModule } from './auth/auth.module';
 import { PostsHttpModule } from './posts/posts-http.module';
 
@@ -19,7 +19,7 @@ import { PostsHttpModule } from './posts/posts-http.module';
     PostCommentsModule,
     PostMetasModule,
     TagsHttpModule,
-    CategoriesModule,
+    CategoriesHttpModule,
     AuthModule
   ],
   controllers: [AppController],
