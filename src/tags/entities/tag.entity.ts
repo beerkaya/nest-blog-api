@@ -1,4 +1,4 @@
-import { PostToTag } from "src/posts/entities/post_to_tag.entity";
+import { PostToTag } from "src/posts/entities/post-to-tag.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity("tags")

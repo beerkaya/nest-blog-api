@@ -1,7 +1,7 @@
 import { IsBoolean, IsNotEmpty, IsOptional, IsString } from "class-validator";
 import { Post } from "src/posts/entities/post.entity";
 import { Exists } from "src/utils/validator/exists.validator";
-import { PostComment } from "../entities/post_comment.entity";
+import { PostComment } from "../entities/post-comment.entity";
 
 export class CreatePostCommentDto {
     @IsString()

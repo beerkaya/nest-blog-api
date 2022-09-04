@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { PostMetasController } from './post_metas.controller';
-import { PostMetasService } from './post_metas.service';
+import { PostMetasController } from './post-metas.controller';
+import { PostMetasService } from './post-metas.service';
 
 describe('PostMetasController', () => {
   let controller: PostMetasController;

@@ -1,7 +1,7 @@
 import { Post } from "src/posts/entities/post.entity";
 import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity("post_metas")
+@Entity("post-metas")
 export class PostMeta {
     @PrimaryGeneratedColumn("uuid")
     id: string;

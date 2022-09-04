@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { PostMetasService } from './post_metas.service';
-import { PostMetasController } from './post_metas.controller';
-import { PostMetasModule } from './post_metas.module';
+import { PostMetasService } from './post-metas.service';
+import { PostMetasController } from './post-metas.controller';
+import { PostMetasModule } from './post-metas.module';
 import { PostsModule } from 'src/posts/posts.module';
 
 @Module({

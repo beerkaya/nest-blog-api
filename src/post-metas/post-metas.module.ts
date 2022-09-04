@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PostMeta } from './entities/post_meta.entity';
+import { PostMeta } from './entities/post-meta.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([PostMeta])],

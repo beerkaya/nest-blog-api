@@ -2,8 +2,8 @@ import { ValidationPipe } from '@nestjs/common';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { AppHttpModule } from './app-http.module';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
-import { EntityNotFoundFilter } from './utils/exception_filters/entity_not_found.filter';
-import { HttpExceptionFilter } from './utils/exception_filters/http-exception.filter';
+import { EntityNotFoundFilter } from './utils/exception-filters/entity-not-found.filter';
+import { HttpExceptionFilter } from './utils/exception-filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppHttpModule);

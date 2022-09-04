@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { PostMetasService } from './post_metas.service';
-import { CreatePostMetaDto } from './dto/create-post_meta.dto';
-import { UpdatePostMetaDto } from './dto/update-post_meta.dto';
+import { PostMetasService } from './post-metas.service';
+import { CreatePostMetaDto } from './dto/create-post-meta.dto';
+import { UpdatePostMetaDto } from './dto/update-post-meta.dto';
 
 @Controller('post-metas')
 export class PostMetasController {

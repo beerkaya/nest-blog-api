@@ -1,7 +1,7 @@
 import { Post } from "src/posts/entities/post.entity";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity("post_comments")
+@Entity("post-comments")
 export class PostComment {
     @PrimaryGeneratedColumn("uuid")
     id: string;

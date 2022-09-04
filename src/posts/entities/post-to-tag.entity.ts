@@ -2,7 +2,7 @@ import { Tag } from "src/tags/entities/tag.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Post } from "./post.entity";
 
-@Entity('posts_tags')
+@Entity('posts-tags')
 export class PostToTag {
     @PrimaryGeneratedColumn('uuid')
     id: string;

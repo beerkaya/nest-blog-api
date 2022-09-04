@@ -2,7 +2,7 @@ import { Category } from "src/categories/entities/category.entity";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Post } from "./post.entity";
 
-@Entity('posts_categories')
+@Entity('posts-categories')
 export class PostToCategory {
     @PrimaryGeneratedColumn('uuid')
     id: string;

@@ -1,4 +1,4 @@
-import { PostToCategory } from "src/posts/entities/post_to_category.entity";
+import { PostToCategory } from "src/posts/entities/post-to-category.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity("categories")

@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Post } from 'src/posts/entities/post.entity';
 import { Repository } from 'typeorm';
-import { CreatePostMetaDto } from './dto/create-post_meta.dto';
-import { UpdatePostMetaDto } from './dto/update-post_meta.dto';
-import { PostMeta } from './entities/post_meta.entity';
+import { CreatePostMetaDto } from './dto/create-post-meta.dto';
+import { UpdatePostMetaDto } from './dto/update-post-meta.dto';
+import { PostMeta } from './entities/post-meta.entity';
 
 @Injectable()
 export class PostMetasService {

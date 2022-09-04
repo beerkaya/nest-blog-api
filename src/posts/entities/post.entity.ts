@@ -1,9 +1,9 @@
-import { PostComment } from "src/post_comments/entities/post_comment.entity";
-import { PostMeta } from "src/post_metas/entities/post_meta.entity";
+import { PostComment } from "src/post-comments/entities/post-comment.entity";
+import { PostMeta } from "src/post-metas/entities/post-meta.entity";
 import { User } from "src/users/entities/user.entity";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { PostToCategory } from "./post_to_category.entity";
-import { PostToTag } from "./post_to_tag.entity";
+import { PostToCategory } from "./post-to-category.entity";
+import { PostToTag } from "./post-to-tag.entity";
 
 @Entity("posts")
 export class Post {
