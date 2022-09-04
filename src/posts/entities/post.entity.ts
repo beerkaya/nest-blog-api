@@ -3,6 +3,7 @@ import { PostMeta } from "src/post_metas/entities/post_meta.entity";
 import { User } from "src/users/entities/user.entity";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { PostToCategory } from "./post_to_category.entity";
+import { PostToTag } from "./post_to_tag.entity";
 
 @Entity("posts")
 export class Post {
@@ -23,6 +24,9 @@ export class Post {
 
     @OneToMany(() => Post, post => post.parent)
     children: Post[];
+
+    @OneToMany(() => PostToTag, postToTag => postToTag.post)
+    public postToTags!: PostToTag[];
 
     @OneToMany(() => PostToCategory, postToCategory => postToCategory.post)
     public postToCategories!: PostToCategory[];
