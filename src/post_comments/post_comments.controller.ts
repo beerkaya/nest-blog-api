@@ -19,16 +19,16 @@ export class PostCommentsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.postCommentsService.findOne(+id);
+    return this.postCommentsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePostCommentDto: UpdatePostCommentDto) {
-    return this.postCommentsService.update(+id, updatePostCommentDto);
+    return this.postCommentsService.update(id, updatePostCommentDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.postCommentsService.remove(+id);
+    return this.postCommentsService.remove(id);
   }
 }

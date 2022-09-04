@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AppModule } from './app.module';
 import { UsersHttpModule } from './users/users-http.module';
-import { PostCommentsModule } from './post_comments/post_comments.module';
+import { PostCommentsHttpModule } from './post_comments/post_comments-http.module';
 import { PostMetasModule } from './post_metas/post_metas.module';
 import { TagsHttpModule } from './tags/tags-http.module';
 import { CategoriesHttpModule } from './categories/categories-http.module';
@@ -16,7 +16,7 @@ import { PostsHttpModule } from './posts/posts-http.module';
     AppModule,
     UsersHttpModule,
     PostsHttpModule,
-    PostCommentsModule,
+    PostCommentsHttpModule,
     PostMetasModule,
     TagsHttpModule,
     CategoriesHttpModule,
