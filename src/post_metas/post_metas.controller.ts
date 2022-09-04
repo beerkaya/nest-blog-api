@@ -19,16 +19,16 @@ export class PostMetasController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.postMetasService.findOne(+id);
+    return this.postMetasService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePostMetaDto: UpdatePostMetaDto) {
-    return this.postMetasService.update(+id, updatePostMetaDto);
+    return this.postMetasService.update(id, updatePostMetaDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.postMetasService.remove(+id);
+    return this.postMetasService.remove(id);
   }
 }

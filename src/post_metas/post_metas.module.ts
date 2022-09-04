@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { PostMetasService } from './post_metas.service';
-import { PostMetasController } from './post_metas.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PostMeta } from './entities/post_meta.entity';
 
 @Module({
-  controllers: [PostMetasController],
-  providers: [PostMetasService]
+  imports: [TypeOrmModule.forFeature([PostMeta])],
+  exports: [TypeOrmModule],
 })
 export class PostMetasModule {}

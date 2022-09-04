@@ -1,7 +1,7 @@
 import { PostComment } from "src/post_comments/entities/post_comment.entity";
 import { PostMeta } from "src/post_metas/entities/post_meta.entity";
 import { User } from "src/users/entities/user.entity";
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity("posts")
 export class Post {
@@ -14,8 +14,8 @@ export class Post {
     @OneToMany(() => PostComment, comment => comment.post)
     comments: PostComment[];
 
-    @OneToMany(() => PostMeta, meta => meta.post)
-    metas: PostMeta[];
+    @OneToOne(() => PostMeta)
+    meta: PostMeta;
 
     @ManyToOne(() => Post, post => post.children)
     parent: Post;
