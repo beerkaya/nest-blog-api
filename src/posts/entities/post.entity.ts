@@ -2,6 +2,7 @@ import { PostComment } from "src/post_comments/entities/post_comment.entity";
 import { PostMeta } from "src/post_metas/entities/post_meta.entity";
 import { User } from "src/users/entities/user.entity";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { PostToCategory } from "./post_to_category.entity";
 
 @Entity("posts")
 export class Post {
@@ -22,6 +23,9 @@ export class Post {
 
     @OneToMany(() => Post, post => post.parent)
     children: Post[];
+
+    @OneToMany(() => PostToCategory, postToCategory => postToCategory.post)
+    public postToCategories!: PostToCategory[];
 
     @Column({ type: "varchar", length: 255, nullable: true })
     title: string;

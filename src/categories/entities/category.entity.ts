@@ -1,9 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { PostToCategory } from "src/posts/entities/post_to_category.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity("categories")
 export class Category {
     @PrimaryGeneratedColumn("uuid")
     id: string;
+
+    @OneToMany(() => PostToCategory, postToCategory => postToCategory.category)
+    public postToCategories!: PostToCategory[];
 
     @Column({ type: "varchar", length: 255, nullable: true })
     title: string;
